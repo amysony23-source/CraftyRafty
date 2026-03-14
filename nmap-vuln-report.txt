@@ -1,0 +1,41 @@
+# Nmap 7.98 scan initiated Sun Mar 15 01:54:44 2026 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -sV --script vuln -p 5000 -oN nmap-vuln-report.txt localhost
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0010s latency).
+Other addresses for localhost (not scanned): ::1
+
+PORT     STATE SERVICE VERSION
+5000/tcp open  http    Werkzeug httpd 3.1.6 (Python 3.11.15)
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-fileupload-exploiter: 
+|   
+|     Couldn't find a file-type field.
+|   
+|_    Couldn't find a file-type field.
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-server-header: Werkzeug/3.1.6 Python/3.11.15
+| vulners: 
+|   cpe:/a:python:python:3.11.15: 
+|     	VERACODE:43894	9.8	https://vulners.com/veracode/VERACODE:43894
+|     	875939FB-9777-5987-AFC3-AF9415D4A294	9.8	https://vulners.com/githubexploit/875939FB-9777-5987-AFC3-AF9415D4A294	*EXPLOIT*
+|     	CVE-2025-13836	7.5	https://vulners.com/cve/CVE-2025-13836
+|     	CVE-2025-12781	6.3	https://vulners.com/cve/CVE-2025-12781
+|     	CVE-2025-12084	6.3	https://vulners.com/cve/CVE-2025-12084
+|_    	CVE-2025-13837	5.5	https://vulners.com/cve/CVE-2025-13837
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Mar 15 02:03:33 2026 -- 1 IP address (1 host up) scanned in 528.41 seconds
