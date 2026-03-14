@@ -1,0 +1,2 @@
+03/14/2026-11:14:23.238758  [**] [1:1000004:1] Port Scan Detected [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.65.1:45401 -> 192.168.65.7:2376
+03/14/2026-11:15:23.272079  [**] [1:1000004:1] Port Scan Detected [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.65.1:31838 -> 192.168.65.7:2376
